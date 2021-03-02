@@ -61,6 +61,7 @@ public class Tabuleiros extends Controller {
 		SalaVirtual sala = SalaVirtual.findById(idSalaVirtual);
 		t.salaVirtual = sala;
 		t.save();
-		renderTemplate("Tabuleiros/indexTabuleiro.html");
+		long idSala = sala.id;
+		renderTemplate("Tabuleiros/indexTabuleiro.html", idSala);
 	}
 }
