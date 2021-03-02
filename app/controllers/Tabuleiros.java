@@ -34,7 +34,7 @@ public class Tabuleiros extends Controller {
 		}
 	}
 
-	public static void indexTabuleiro(long idSala) {
+	public static void indexTabuleiro(Long idSala) {
 		SalaVirtual sala = SalaVirtual.findById(idSala);
 		render(sala);
 	}
