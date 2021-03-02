@@ -1,0 +1,53 @@
+ #{extends 'main.html' /}
+#{set title:'Frequencia e participação' /}
+ 
+ <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+ 							<h4>Alunos inscritos</h4></br>
+                 			 <div class="table-responsive"> 
+                 			 <form>    
+                            	<table action="@{CentrosAprendizagem.frequenciaAlunos( )}" class="table table-striped table-bordered zero-configuration">
+                                    	<thead>
+                                            	<tr>
+                                            		<th>Nome</th>
+                                                	<th>Frequência</th>
+                                                	<th>Participação</th>
+                                            	</tr>
+                                        	</thead>
+                                          
+                                        #{list items: alunos, as: 'aluno'}
+                                    	<tbody>
+                                            <tr>
+                                                <td>${aluno.nome}</td>
+                                                <td> 
+                                                <input type="hidden" class="form-control" name="salaVirtual" value="${salaVirtual}">
+                                        		<input type="hidden" class="form-control" name="id_Aluno" value="${aluno.id}">
+                                        		<input type="hidden" class="form-control" name="id_CA" value="${id_CA}">
+                                        		 
+                                        		 <select name="frequencia" class="custom-select" style = "border-radius: 6px; padding: 8px; width: 200px; height:50px ; margin-top: 1px; margin-left: 23px; margin-right: 15px; background: #836FFF; color: white; position: center">
+                                                		<option value="2">Presente</option>
+                                                		<option value="0">Ausente</option>
+                                                </select>
+                                                	
+                                                	
+                                                <td> 
+                                                	<select name="participacao" class="custom-select" style = "border-radius: 6px; padding: 8px; width: 200px; height:50px ; margin-top: 1px; margin-left: 23px; margin-right: 15px; background: #836FFF; color: white; position: center">
+                                                		<option value="0">Não participativo</option>
+                                                		<option value="2">Pouco participativo</option>
+                                                		<option value="3">Participativo</option>
+                                                		<option value="4">Muito participativo</option>
+                                                	</select>	
+                                                </td>  
+                                       		</tr>
+                                       	</tbody>
+                                    #{/list}
+							</table>
+                                        
+                                        <button class="btn mb-1 btn-success">Salvar<button>   
+      						</form>	
+                        </div>
+                               		
+ 

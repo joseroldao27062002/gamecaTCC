@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Comentário' /}
+
+<div class="content-body">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-3">  
+                            </div>
+                        </div>  
+                     </div>
+                  
+                     <div class="col-lg-8 col-xl-9">
+                        <div class="card" style="width:830px;  margin-left: -90px; position: center">
+                            <div class="card-body" >
+                                <form action="@{Mensagens.salvarComentario()}" class="form-profile" method="GET" enctype="multipart/form-data">
+                                 <input type="hidden" class="form-control" name="comentario.id" value="${comentario?.id}">
+                                   <input type="hidden" class="form-control" name="idMensagem" value="${idMensagem}">
+                                	 <input type="textarea" style=" width:780px; height: 50px "  name="comentario.comentario" value="${comentario?.comentario}" placeholder="Deixe seu comentário" >
+                                        <button class="btn btn-primary px-3 ml-4">Postar</button>
+                                        </form>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                   </div>
+				</div>
+                     
+                     
+                 

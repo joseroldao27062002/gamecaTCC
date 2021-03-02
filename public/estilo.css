@@ -1,0 +1,192 @@
+@charset "ISO-8859-1";
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing:border-box;
+}
+
+ body {
+    background-color:  #F0FFFF;
+ }
+
+.game {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    margin-top: 100px;
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.green {
+    /*background-color: #66bb6a;*/
+    background-color: #90EE90; 
+}
+
+.red {
+    /*background-color: #e53935;*/
+    background-color: #FA8072;
+    /*border: none;*/
+}
+
+.yellow {
+    /*background-color: #fff176;*/
+    background-color: #fff176;
+    /*border: none;*/ 
+}
+
+.blue {
+    /*background-color: #29b6f6;*/
+    background-color: #6495ED;
+    border: none;
+}
+
+.house {
+    display: inline-block;
+    position: absolute;
+    width: 53.7%;
+    height: 53.7%;
+    padding: 7%;
+    border: 2px solid black;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+    margin-right: -25px;
+}
+
+.box {
+    position: relative;
+    margin-left: -10%;
+    margin-top: -10%;
+    width: 280px;
+    height: 280px;
+    padding: 20%;
+    background-color: white;
+}
+
+.square {
+    position: absolute;
+    /*
+    width: 29%;
+    height: 29%;
+    */
+    width: 20%;
+    height: 20%;
+}
+/*done*/
+.square-one {
+    top: 10px;
+    left: 10px;
+}
+/*done*/
+.square-two {
+    top: 10px;
+    right: 10px;
+}
+/*done*/
+.square-three {
+    bottom: 10px;
+    left: 10px;
+}
+/*done*/
+.square-four {
+    bottom: 10px;
+    right: 10px;
+}
+/*done*/
+.square-five {
+    bottom: 80px;
+    left: 10px;
+}
+/*done*/
+.square-six {
+    bottom: 80px;
+    right: 10px;
+}
+/*done*/
+.square-seven {
+    top: 80px;
+    left: 10px;
+}
+
+.square-eight {
+    bottom: 40%;
+    right: 75px;
+}
+
+.square-nine {
+    bottom: 40%;
+    left: 75px;
+}
+/*done*/
+.square-ten {
+    top: 80px;
+    right: 10px;
+}
+
+.home {
+    position: absolute;
+    top: 40%;
+    left: 36.9%;
+    width: 26.7%;
+    height: 26.7%;
+    border-bottom: 20px solid #e53935;
+    border-top: 20px solid #fff176;
+    border-left: 20px solid #66bb6a;
+    border-right: 20px solid #29b6f6;
+}
+
+.cells {
+    position: absolute;
+    /*width: 6.66% ;
+    height: 6.66%;*/
+    width: 9%;
+    height: 9%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    /*#e5e5e569*/
+}
+
+.safe {
+    background-color: #99999938;
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.g-start {
+    background-color: #66bb6a;
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+
+}
+
+.y-start {
+    background-color: #fff176;
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+
+}
+
+.r-start {
+    background-color: #e53935;
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+
+}
+
+.b-start {
+    background-color: #29b6f6;
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+canvas {
+    width: 102%;
+    height: 102%;
+    top: 20%;
+    left: 20%;
+}

@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Registro do Tabuleiro' /}
+
+ <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                             <h4 class="card-title">Informações</h4>
+                                <div class="basic-form">
+                                    <form action="@{Tabuleiros.salvarTabuleiro(idSala = salaVirtual)}" method="post">
+                                    	<input type="hidden" class="form-control" name="idSalaVirtual" value="${salaVirtual}">
+                                            <div class="form-group col-md-6">
+                                                <label>Nome do tabuleiro</label>
+                                                <input type="text" class="form-control" name="t.nome" value="${t?.nome}">
+                                                  #{ifError 't.nome'}<p style = "color: red">#{error 't.nome' /}</p>#{/ifError}
+                                            </div>
+                                		</div>
+                            		
+                               		 <button  style="background: #2b961f" class="btn mb-1 btn-primary btn-lg">Salvar</button>
+                               		 
+                               		 </form>
+                               		 
+                               		  </div>
+                               </div> 

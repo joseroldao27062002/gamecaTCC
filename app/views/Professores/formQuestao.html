@@ -1,0 +1,108 @@
+#{extends 'main.html' /}
+#{set title:'Formulário' /}
+<script src="@{'public/javascripts/tipoQuestao.js'}"></script>
+
+
+<form action = "@{Formularios.salvarFormulario}">	
+<h1 style="margin-left:50px; ;"><input type="text" style="width:700px"; placeholder="Titulo do formuário"></h1>
+<ul id="lista">
+	<li>
+		<div class="container-fluid" id="newQuestao">
+		<button onclick="excluirQuestao()"style="margin-right:0px;">X</button>
+			<div class="col-lg-12">
+            	<div class="card">
+                	<div class="card-body"> 	 
+                     	<h4 class="card-title"><li class="list-group-item active">Enunciado da questão</li></h4>
+                        	<div class="basic-form">
+                                	<div class="form-group">
+                                    	<textarea required name = "questao.enunciado" value="${questao?.enunciado}" class="form-control h-150px"  rows="2" cols="100" id="comment"></textarea>
+                                    </div>
+                             </div>
+                     </div>
+                  </div>
+            </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"><name = "questao.imagem" value="${questao?.imagem}" class="list-group-item active">Anexar arquivo</h4>
+                                <div class="basic-form">
+                                        <div class="form-group">
+                                            <input type="file" class="form-control-file">
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                       <div class="col-lg-12" >
+                        <div class="card">
+                            <div class="card-body">
+                                 <h4 class="card-title"><li class="list-group-item active">A questão será</li></h4>
+                                <div class="basic-form">
+                                        <div class="form-group">
+                                            <select name="questao.tipoQuestao" onChange = "definirBloco(0)" class="form-control form-control-lg selecoes">
+                                            	<option>Não selecionado</option>
+                                                <option value="questao.objetiva" >Objetiva</option>
+                                                <option value="questao.discursiva" >Discursiva</option>
+                                            </select>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               <div class="col-lg-12 discursiva">
+                        <div class="card">
+                            <div class="card-body">
+                            	 
+                                <h4 class="card-title"><li class="list-group-item active">Resposta da questão</li></h4>
+                                <div class="basic-form">
+                                        <div class="form-group">
+                                            
+                                            <textarea name = "questao.respostaDiscursiva" class="form-control h-150px"  rows="2" cols="100" id="comment" placeholder="Resposta do aluno"></textarea>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                            	 
+                                <h4 class="card-title"><li class="list-group-item active">Comentário do Professor</li></h4>
+                                <div class="basic-form">
+                                        <div class="form-group">
+                                            
+                                            <textarea required name = "questao.comentario" class="form-control h-150px"  rows="2" cols="100" id="comment" placeholder="Esse comentário aparecerá após o aluno reponder a questão"></textarea>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    </div>
+                    
+                      
+                    
+                    
+                    </div>
+                 
+                 
+                 </li>
+             	</ul>  
+             	  
+             	</form>
+                  <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                            			<a onclick ="adicionarLi()" class="btn login-form__btn submit w-100">Inserir nova Questão</a>><br/>
+                                        <a "@{Questoes.salvarQuestao()}" style="margin-top:10px; height:50px;" href="#" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-block"><i class="ti-plus f-s-12 m-r-5"></i> Salvar formulário</a>
+                                       	<button style="margin-top:10px;" class="btn login-form__btn submit w-100">Postar formulário</button>
+                  </div>
+               </div>
+            </div>    
+           
+            

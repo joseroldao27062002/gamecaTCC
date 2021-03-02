@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'Registro do Centro de Aprendizagem' /}
+
+ <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                             <h4 class="card-title">Informações</h4>
+                                <div class="basic-form">
+                                    <form action="@{centrosAprendizagem.salvar(salaVirtual = salaVirtual)}" method="post">
+                                    
+                                    
+                                    	<input type="hidden" class="form-control" name="idSalaVirtual" value="${salaVirtual}">
+                                        <div class="form-row">
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label>Data</label>
+                                                <input type="date" class="form-control" name="c.data" value="${flash['c.data'] != null? flash['c.data']: c?.data}" >
+                                                 #{ifError 'c.data'}<p style = "color: red">#{error 'c.data' /}</p>#{/ifError}
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label>Horário</label>
+                                                <input type="time" class="form-control" name="c.horario" value="${flash['c.horario'] != null? flash['c.horario']: c?.horario}">
+                                                 #{ifError 'c.horario'}<p style = "color: red">#{error 'c.horario' /}</p>#{/ifError}
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label>Local</label>
+                                                <input type="text" class="form-control" name="c.local" value="${flash['c.local'] != null? flash['c.local']: c?.local}">
+                                                 #{ifError 'c.local'}<p style = "color: red">#{error 'c.local' /}</p>#{/ifError}
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label>Assunto</label>
+                                                <input type="text" class="form-control" name="c.assunto" value="${flash['c.assunto'] != null? flash['c.assunto']: c?.assunto}">
+                                                #{ifError 'c.assunto'}<p style = "color: red">#{error 'c.assunto' /}</p>#{/ifError}
+                                            </div>
+                                		</div>
+                            		
+                               		 <button  style="background: #2b961f" class="btn mb-1 btn-primary btn-lg">Salvar</button>
+                               		 
+                               		 </form>
+                               		 
+                               		  </div>
+                               		  </div> 
+                               	  

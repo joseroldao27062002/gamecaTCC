@@ -1,0 +1,34 @@
+#{extends 'main-Login.html' /}
+#{set title:'Cadastro de professores' /}
+
+<div class="row justify-content-center h-100">
+<div class="col-xl-6">
+    <div class="form-input-content">
+        <div class="card login-form mb-0">
+            <div class="card-body pt-5">
+                <a class="text-center" href="#"> <h4>Olá, professor!</h4></a>
+
+                <form action="@{Professores.salvar}"  class="mt-5 mb-5 login-input">
+                	
+                	<div class="form-group">
+                        <input  name="prof.nome" type="text" class="form-control" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group">
+                        <input  name="prof.matricula" type="text" class="form-control" placeholder="Matricula">
+                    </div>
+                    <div class="form-group">
+                        <input name="prof.email" type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input  name="prof.senha" type="password" class="form-control" placeholder="Senha">
+                    </div>
+                    <button class="btn login-form__btn submit w-100">Cadastrar</button>
+                </form>
+               <p class="mt-5 login-form__footer">Voltar para a página de <a href="@{PainelLoginUsuario.index()}" class="text-primary">Login</a></p>
+               
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

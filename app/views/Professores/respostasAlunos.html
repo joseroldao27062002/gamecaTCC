@@ -1,0 +1,18 @@
+#{extends 'main.html'/}
+#{set title:'Respostas dos alunos' /}
+<script src="@{'public/javascripts/tipoQuestao.js'}"></script>
+
+<h2>Respostas dos alunos</h2>
+
+<ul>
+	<li>
+		<div style="float:left;margin-top:5px;width: 500px;">
+			<p href="#" style="font-size:25px;">Nome do aluno</p>
+		</div>
+		<div style="margin-left:500px; margin-top:20px;">
+			<button href="@{Professores.resposta};" style="background:green; border:none;" class="btn btn-danger px-5">Ver resposta do aluno</button>
+			<input style="width:130px; float:right; margin-right:150px; border-radius:5px 5px 5px 5px;" type="text" class="form-control" id="val-number" name="val-number" placeholder="Nota">	
+		</div>
+		<hr></hr>
+	</li>
+</ul>

@@ -1,0 +1,7 @@
+# Application dependencies
+
+require:
+    - play 1.4.5
+    - play -> paginate head
+    - mysql -> mysql-connector-java 8.0.23:
+        force: true

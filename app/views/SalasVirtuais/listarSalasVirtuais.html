@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Salas Virtuais' /}
+
+
+<div style = "background:  white">
+#{list items:lista, as:'s'}
+	<a href='@{SalasVirtuais.editar(s.id)}'>Editar</a> 
+	
+	<a href='@{SalasVirtuais.deletar(s.id)}'>Deletar</a> 
+	
+	${s.nomeTurma} - ${s.disciplina} - ${s.dia} - ${s.horario} - ${s.sala} - ${s.bloco}  <br/>
+	
+#{/list}
+</div>
+
+
+
+
+

@@ -1,0 +1,23 @@
+#{extends 'main-alunos.html' /}
+#{set title:'Alerta' /} 
+#{ set 'moreStyles'}
+#{stylesheet 'play-pagination.css' /}
+#{/set}
+
+<div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                             <h4 class="card-title">O tabuleiro ainda não foi inicializado pelo seu/sua professor(a). Peça para que ele/ela inicialize no botão "Tabuleiro"!</h4>
+                                <div class="basic-form">
+                                    <form action="@{Tabuleiros.salvarTabuleiro(idSala = salaVirtual)}" method="post">
+                                    	<input type="hidden" class="form-control" name="idSalaVirtual" value="${salaVirtual}">
+                                            <div class="form-group col-md-6">
+                                              
+                                            
+                                            </div>
+                                		</div>
+                          		 	</form> 
+                               	 </div>
+                             </div> 

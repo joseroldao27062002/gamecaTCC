@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Ludo</title>
+	<link rel = "stylesheet" type = "text/css" href = "estilo.css">
+</head>
+<body>
+	<div class = "game">
+    	<div class = "house green" style = "left: -90px; top: -65px;">
+        	<div class = "box box-green">
+            	<div class = "square square-one green">
+            		<canvas class = "greenCanvas"></canvas>
+            	</div>
+      			
+            	<div class = "square square-two green">
+            		<canvas class = "greenCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-three green">
+            		<canvas class = "greenCanvas"></canvas>
+            	</div>
+            	
+           		<div class = "square square-four green">
+           			<canvas class = "greenCanvas"></canvas>
+           		</div>
+
+                <div class = "square square-five green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+
+                <div class = "square square-six green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+
+                <div class = "square square-seven green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+
+                <div class = "square square-eight green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+
+                <div class = "square square-nine green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+
+                <div class = "square square-ten green">
+                    <canvas class = "greenCanvas"></canvas>
+                </div>
+        	</div>
+    	</div>
+
+    	<div class = "house yellow" style = "right: -77px; top: -65px;">
+        	<div class = "box box-yellow">
+            	<div class = "square square-one yellow">
+            		<canvas class = "yellowCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-two yellow">
+            		<canvas class = "yellowCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-three yellow">
+            		<canvas class = "yellowCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-four yellow">
+            		<canvas class = "yellowCanvas"></canvas>
+            	</div>
+
+                <div class = "square square-five yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+
+                <div class = "square square-six yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+
+                <div class = "square square-seven yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+
+                <div class = "square square-eight yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+
+                <div class = "square square-nine yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+
+                <div class = "square square-ten yellow">
+                    <canvas class = "yellowCanvas"></canvas>
+                </div>
+        	</div>
+    	</div>
+
+    	<div class = "house red" style = "left: -90px; bottom: -100px">
+        	<div class = "box box-red">
+            	<div class = "square square-one red">
+            		<canvas class = "redCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-two red">
+            		<canvas class = "redCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-three red">
+            		<canvas class = "redCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-four red">
+            		<canvas class = "redCanvas"></canvas>
+            	</div>
+
+                <div class = "square square-five red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+
+                <div class = "square square-six red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+
+                <div class = "square square-seven red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+
+                <div class = "square square-eight red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+
+                <div class = "square square-nine red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+
+                <div class = "square square-ten red">
+                    <canvas class = "redCanvas"></canvas>
+                </div>
+        	</div>
+    	</div>
+
+    	<div class = "house blue" style = "bottom: -100px; right: -77px">
+        	<div class = "box box-blue">
+        		
+            	<div class = "square square-one blue">
+            		<canvas class = "blueCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-two blue">
+            		<canvas class = "blueCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-three blue">
+            		<canvas class = "blueCanvas"></canvas>
+            	</div>
+            	
+            	<div class = "square square-four blue">
+            		<canvas class = "blueCanvas"></canvas>
+            	</div>
+
+                <div class = "square square-five blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+
+                <div class = "square square-six blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+
+                <div class = "square square-seven blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+
+                <div class = "square square-eight blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+
+                <div class = "square square-nine blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+
+                <div class = "square square-ten blue">
+                    <canvas class = "blueCanvas"></canvas>
+                </div>
+        	</div>
+    	</div>
+        
+    	<div class = "home"></div>
+    	<div class = "cells" style = "top: 39.5%; left: -17%;"></div>
+    	<div class = "cells g-start" style = "top: 39.5%; left: -8%;"></div>
+    	<div class = "cells" style = "top: 39.5%; left: 1%;"></div>
+    	<div class = "cells" style = "top: 39.5%; left: 10%;"></div>
+    	<div class = "cells" style = "top: 39.5%; left: 19%;"></div>
+    	<div class = "cells" style = "top: 39.5%; left: 28%;"></div>
+
+    	<div class = "cells" style = "top: -14%;left: 36.7%;"></div>
+    	<div class = "cells" style = "top: -5%;left: 36.7%;"></div>
+    	<div class = "cells safe" style = "top: 4%;left: 36.7%;"></div>
+    	<div class = "cells" style = "top: 13%;left: 36.7%;"></div>
+    	<div class = "cells" style = "top: 22%;left: 36.7%;"></div>
+    	<div class = "cells" style = "top: 31%;left: 36.7%;"></div>
+
+    	<div class = "cells" style = "top: -14%; left: 45.5%;"></div>
+    	<div class = "cells yellow" style = "top: -5%; left: 45.5%;"></div>
+    	<div class = "cells yellow" style = "top: 4%; left: 45.5%;"></div>
+    	<div class = "cells yellow" style = "top: 13%; left: 45.5%;"></div>
+    	<div class = "cells yellow" style = "top: 22%; left: 45.5%;"></div>
+    	<div class = "cells yellow" style = "top: 31%; left: 45.5%;"></div>
+
+    	<div class = "cells" style = "top: -14%; left: 54.5%;"></div>
+    	<div class = "cells y-start" style = "top: -5%; left: 54.5%;"></div>
+    	<div class = "cells" style = " top: 4%; left: 54.5%;"></div>
+    	<div class = "cells" style = "top: 13%; left: 54.5%;"></div>
+    	<div class = "cells" style = "top: 22%; left: 54.5%;"></div>
+    	<div class = "cells" style = "top: 31%; left: 54.5%;"></div>
+
+    	<div class = "cells" style = "top: 39.5%; right: 27.7%"></div>
+    	<div class = "cells" style = "top: 39.5%; right: 18.7%;"></div>
+    	<div class = "cells" style = "top: 39.5%; right: 9.7%;"></div>
+    	<div class = "cells safe" style = "top: 39.5%; right: 0.7%;"></div>
+    	<div class = "cells" style = "top: 39.5%; right: -8.2%;"></div>
+    	<div class = "cells" style = "top: 39.5%; right: -17%;"></div>
+
+    	<div class = "cells blue" style = "top: 48.5%; right: 27.7%"></div>
+    	<div class = "cells blue" style = "top: 48.5%; right: 18.7%;"></div>
+    	<div class = "cells blue" style = "top: 48.5%; right: 9.7%;"></div>
+    	<div class = "cells blue" style = "top: 48.5%; right: 0.7%;"></div>
+    	<div class = "cells blue" style = "top: 48.5%; right: -8.2%"></div>
+    	<div class = "cells" style = "top: 48.5%; right: -17%;"></div>
+
+    	<div class = "cells" style = "top: 57.5%; right: 27.7%"></div>
+    	<div class = "cells" style = "top: 57.5%; right: 18.7%;"></div>
+    	<div class = "cells" style = "top: 57.5%; right: 9.7%;"></div>
+    	<div class = "cells" style = "top: 57.5%; right: 0.7%;"></div>
+    	<div class = "cells b-start" style = "top: 57.5%; right: -8.2%;"></div>
+    	<div class = "cells" style = "top: 57.5%; right: -17%;"></div>
+
+    	<div class = "cells" style = "bottom: -19.5%; left: 54.5%;"></div>
+    	<div class = "cells" style = "bottom: -10.5%; left: 54.5%;"></div>
+    	<div class = "cells safe" style = "bottom: -2%; left: 54.4%;"></div>
+    	<div class = "cells" style = "bottom: 6.5%; left: 54.5%;"></div>
+    	<div class = "cells" style = "bottom: 15.5%; left: 54.5%;"></div>
+    	<div class = "cells" style = "bottom: 24.5%; left: 54.5%;"></div>
+
+    	<div class = "cells" style = "bottom: -19.5%; left:45.5%;"></div>
+    	<div class = "cells red " style = "bottom: -10.5%; left: 45.5%;"></div>
+    	<div class = "cells red" style = "bottom: -2%; left: 45.5%;"></div>
+    	<div class = "cells red" style = "bottom: 6.5%; left: 45.5%;"></div>
+    	<div class = "cells red" style = "bottom: 15.5%; left: 45.5%;"></div>
+    	<div class = "cells red" style = "bottom: 24.5%; left: 45.5%;"></div>
+
+    	<div class = "cells" style="bottom: -19.5%; left: 36.5%;"></div>
+    	<div class = "cells r-start" style = "bottom: -10.5%; left: 36.5%;"></div>
+    	<div class = "cells" style = "bottom: -2%; left: 36.5%;"></div>
+    	<div class = "cells" style = "bottom: 6.7%; left: 36.5%;"></div>
+    	<div class = "cells" style = "bottom: 15.5%; left: 36.5%;"></div>
+    	<div class = "cells" style = "bottom: 24.5%; left: 36.5%;"></div>
+
+    	<div class = "cells" style = "top: 57.5%; left: 28%"></div>
+    	<div class = "cells" style = "top: 57.5%; left: 19%;"></div>
+    	<div class = "cells" style = "top: 57.5%; left: 10%;"></div>
+    	<div class = "cells safe" style = "top: 57.5%; left: 1%;"></div>
+    	<div class = "cells" style = "top: 57.5%; left: -8%;"></div>
+    	<div class = "cells" style = "top: 57.5%; left: -17%;"></div>
+
+    	<div class = "cells green" style = "top: 48.5%; left: 28%"></div>
+    	<div class = "cells green" style = "top: 48.5%; left: 19%;"></div>
+    	<div class = "cells green" style = "top: 48.5%; left: 10%;"></div>
+    	<div class = "cells green" style = "top: 48.5%; left: 1%;"></div>
+    	<div class = "cells green" style = "top: 48.5%; left: -8%;"></div>
+    	<div class = "cells" style = "top: 48.5%; left: -17%;"></div>
+	</div>
+</body>
+</html>

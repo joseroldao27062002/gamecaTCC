@@ -1,0 +1,48 @@
+     
+                    #{extends 'main.html' /}
+#{set title:'Nova turma' /}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Crie uma nova turma!</h4></br>
+                                <div class="basic-form">
+                                    <form action="@{SalasVirtuais.salvar}">
+                                        <div class="form-group">
+                                        
+                                        
+                                        	
+                                            <p class="text-muted m-b-15 f-s-12"><code>As informações que serão preenchidas estão relacionadas ao Centro de Aprendizagem (CA) presencial com a finalidade de 
+                                            auxiliar o aluno a conhecer sobre os horários e locais da monitoria de cada disciplina.</code> </p>
+                                            
+                                            
+                                           <!--<input type="text" name="tabuleiro.id" value="${tabuleiro?.id}">-->
+                                           	<input type="hidden" name="s.id" value="${s?.id}">
+                                            
+                                            <p><strong>Nome da turma:</strong></p> <input type="text" name="s.nomeTurma" value="${flash['s.nomeTurma'] != null? flash['s.nomeTurma']: s?.nomeTurma}" class="form-control input-default" placeholder="Ex: 4INF2M"></br>
+                                             #{ifError 's.nomeTurma'}<p style = "color: red">#{error 's.nomeTurma' /}</p>#{/ifError}
+                                            
+                                            <p><strong>Disciplina: </strong></p> <input type="text" name="s.disciplina" value="${flash['s.disciplina'] != null? flash['s.disciplina']:s?.disciplina}" class="form-control input-default" placeholder="Ex: História"></br>
+                                             #{ifError 's.disciplina'}<p style = "color: red">#{error 's.disciplina' /}</p>#{/ifError}
+                                           
+                                            <p><strong>Dia da semana: </strong></p> <input type="text" name="s.dia" value="${flash['s.dia'] != null? flash['s.dia']:s?.dia}"class="form-control input-default" placeholder="Ex: Quarta"></br>
+                                             #{ifError 's.dia'}<p style = "color: red">#{error 's.dia' /}</p>#{/ifError}
+                                            
+                                            <p><strong>Horário: </strong></p> <input type="time" name="s.horario" value="${flash['s.horario'] != null? flash['s.horario']:s?.horario}"  class="form-control input-default" placeholder="Ex: 16:30h"></br>
+                                             #{ifError 's.horario'}<p style = "color: red">#{error 's.horario' /}</p>#{/ifError}
+                                            
+                                            <p><strong>Sala:</strong></p> <input type="text" name="s.sala" value="${flash['s.sala'] != null? flash['s.sala']:s?.sala}" class="form-control input-default" placeholder="Ex:  8"></br>
+                                             #{ifError 's.sala'}<p style = "color: red">#{error 's.sala' /}</p>#{/ifError}
+                                           
+                                            <p><strong>Bloco:</strong></p> <input type="text" name="s.bloco" value="${flash['s.bloco'] != null? flash['s.bloco']:s?.bloco}" class="form-control input-default" placeholder="Ex: 2">
+                                             #{ifError 's.bloco'}<p style = "color: red">#{error 's.bloco' /}</p>#{/ifError}
+                                            
+                                        </div>
+                                        <button href="" class="btn login-form__btn submit w-100">Criar nova turma</button>
+                                        
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

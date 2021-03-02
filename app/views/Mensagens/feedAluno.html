@@ -1,0 +1,117 @@
+#{extends 'main-alunos.html' /}
+#{set title:'Feed' /}
+
+<div class="content-body">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-3">
+                     </div>
+                 </div>  
+			</div>
+                    <div class="col-lg-8 col-xl-9">
+                        <div class="card" style="width:830px;  margin-left: -90px; position: center">
+                            <div class="card-body" >
+                                <form action="@{Mensagens.salvarMensagemAluno()}" class="form-profile" method="POST" enctype="multipart/form-data">
+                                  
+                                  <input type="hidden" class="form-control" name="idSalaVirtual" value="${idSalaVirtual}">
+                                  
+                                  	<input type="hidden" class="form-control" name="mensagem.id" value="${mensagem?.id}">
+                                	<input type="hidden" class="form-control" name="idFeed" value="${idFeed}">
+                                	<input type="textarea" style=" width:780px; height: 50px "  name="mensagem.conteudoMensagem" value="${mensagem?.conteudoMensagem}" placeholder="Poste uma nova mensagem ou imagem..." >
+                                	
+                                	 <input type="file" name="foto" value="${foto}">
+                                        <button class="btn btn-primary px-3 ml-4">Postar</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+						 #{list items: listarMensagens, as: 'mensagem'}
+                         <div class="card" style="width:830px;  margin-left: -75px; position: center">
+                            <div class="card-body">
+                                <div class="media media-reply">
+                                   <div class="media-body">
+                                       <div class="d-sm-flex justify-content-between mb-2">
+                                       
+                                            <h5 class="mb-sm-0"> ${mensagem.autorMensagem}<small class="text-muted ml-3">Post feito às ${mensagem.horaPublicacao} em  ${mensagem.dataPublicacao} </small></h5>
+                                            <div class="media-reply__link">
+                                               
+                                                <span>
+                                                <input type="hidden" class="form-control" name="matricula" value="${matricula}">
+                                          		#{if mensagem?.matriculaAutorMensagem == matricula}
+                                                <a href="@{Mensagens.editarMensagemAluno(mensagem.id, idSalaVirtual )}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil color-muted m-r-5"></i> 
+                                                <a href="@{Mensagens.deletarMensagemAluno(mensagem.id, idSalaVirtual )}" data-toggle="tooltip" data-placement="top" title="Excluir"><i class="fa fa-close color-danger"></i> 
+                                                #{/if}
+                                                 <a href="@{Mensagens.comentarioAluno(mensagem.id)}"><button class="btn btn-transparent text-dark font-weight-bold p-0 ml-2">Responder</button></a>
+                                                <input type="hidden" class="form-control" name="idSalaVirtual" value="${idSalaVirtual}">
+                                                
+                                                <div class="modal fade none-border" id="add-category">
+                                        			<div class="modal-dialog">
+                                           				 <div class="modal-content">
+                                                			<div class="modal-header">
+                                                    		<h4 class="modal-title"><strong>Deseja excluir ?</strong></h4>
+                                                			</div>
+                                            				<div class="modal-footer">
+                                                    		<a href="@{Mensagens.deletarMensagemAluno(mensagem.id, idSalaVirtual)}" ><button style="background: #FF0000; border-radius: 6px; padding: 15px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Excluir</button></a>
+                                                			</div>
+                                            			</div>
+                                        			</div>
+                                    			</div>
+                                               </span>
+                                            </div>
+                                        </div>
+                                        
+                                        <h5>${mensagem.conteudoMensagem}</h5>
+                                        #{if mensagem?.nomeFoto != null}
+                                        <img src="/uploads/${mensagem.id}/${mensagem.nomeFoto}" style="width:700px">
+                                 		#{/if}
+                                 		
+                                 		#{list items: listarComentarios, as: 'comentario'}
+                                        #{if comentario.mensagem == mensagem}
+                                         <div class="media-body">
+                                            <div class="d-sm-flex justify-content-between mb-2">
+                                                <h5 class="mb-sm-0">${comentario.autorComentario}<small class="text-muted ml-3">Comentário postado às ${comentario.horaPublicacao} em  ${comentario.dataPublicacao} </small> <small>
+                                                #{if comentario?.matriculaAutorComentario == matricula}
+                                                <a href="@{Mensagens.editarComentarioAluno(comentario.id, mensagem.id)}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil color-muted m-r-5"></i></a></small> <small><a href="@{Mensagens.deletarComentarioAluno(comentario.id, mensagem.id)}" data-toggle="tooltip" data-placement="top" title="Excluir"><i class="fa fa-close color-danger"></i></a></small></h5>
+                                                 #{/if}
+                                            </div>
+                                            <h5>${comentario.comentario}</h5>
+                                        </div>
+                                        #{/if}
+                                        #{/list}
+                                        
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Id ma mensagem ${mensagem.id} </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Comentário:</label>
+                                                             <input type="textarea" style=" width:400px; height: 50px "  name="comentario.comentario" value="${comentario?.comentario}" >
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">	
+                                                	  <a href="@{Mensagens.salvarComentarioAluno(comentario?.comentario)}"><button type="button" class="btn mb-1 btn-success">Postar</button></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                         	#{/list}
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--***********
