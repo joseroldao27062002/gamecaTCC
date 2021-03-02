@@ -70,6 +70,6 @@ public class Tabuleiros extends Controller {
 	        System.out.println("tabuleiro foi salvo!");
 		long idSala = sala.id;
 	       System.out.println("idSala de salvarTabuleiro "+idSala);
-		renderTemplate("Tabuleiros/indexTabuleiro.html", idSala);
+		renderTemplate("Tabuleiros/indexTabuleiro.html", sala);
 	}
 }
