@@ -2,6 +2,23 @@
 #{set title:'Feed' /}
 
 <div class="content-body">
+			 <div class="col-lg-8 col-xl-9">
+                        <div class="card" style="width:830px;  margin-left: -90px; position: center">
+                            <div class="card-body" >
+                                <form action="@{Mensagens.salvarMensagem()}" class="form-profile" method="POST" enctype="multipart/form-data">
+                                  
+                                  <input type="hidden" class="form-control" name="idSalaVirtual" value="${idSalaVirtual}">
+                                  
+                                  	<input type="hidden" class="form-control" name="mensagem.id" value="${mensagem?.id}">
+                                	<input type="hidden" class="form-control" name="idFeed" value="${idFeed}">
+                                	<input type="textarea" style=" width:780px; height: 50px "  name="mensagem.conteudoMensagem" value="${mensagem?.conteudoMensagem}" placeholder="Poste uma nova mensagem ou imagem..." >
+                                	
+                                	 <input type="file" name="foto" value="${foto}">
+                                        <button class="btn btn-primary px-3 ml-4">Postar</button>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
 
 						 #{list items: listarMensagens, as: 'mensagem'}
                         <div class="card" style="width:830px;  margin-left: -75px; position: center">
