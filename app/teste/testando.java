@@ -1,5 +1,5 @@
 package teste;
-import javafx.application.Application;
+//import javafx.application.Application;
 import java.util.UUID;
 
 import models.SalaVirtual;
