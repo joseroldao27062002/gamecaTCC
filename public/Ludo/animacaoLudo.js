@@ -140,7 +140,7 @@
 			
             var pecas = [
                 /*Peças azuis*/
-                {i: 9, j: 9, color: "#00BFFF", id: 0, pos: -1},
+                {i: 9, j: 9, color: "#00BFFF", id: -1, pos: -1},
                 {i: 9, j: 14, color: "#00BFFF", id: -1, pos: -1},
                 {i: 14, j: 9, color: "#00BFFF", id: -1, pos: -1},
                 {i: 14, j: 14, color:"#00BFFF", id: -1, pos: -1},
