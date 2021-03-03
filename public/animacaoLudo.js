@@ -520,7 +520,7 @@ var yellow = "#ffff00";
 						}									
 					}
 				}
-				ajaxRequest.open('GET', 'http://localhost:9000/centrosaprendizagem/serializardados?idSala=2', true);
+				ajaxRequest.open('GET', 'http://http://gameca.herokuapp.com/centrosaprendizagem/serializardados?idSala=2', true);
 				ajaxRequest.send();	 	
 			}	
 			
