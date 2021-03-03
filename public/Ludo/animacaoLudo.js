@@ -2,7 +2,7 @@
             var red = "#ff0000";
             var green = "#00ff00";
             var white = "#ffffff";
-            var blue = ""#6495ED";
+            var blue = "#6495ED";
 
 			/*Inicio do vetor de peças*/
             var trilhas = [
