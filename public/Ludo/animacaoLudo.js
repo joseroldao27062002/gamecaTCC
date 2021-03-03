@@ -1,4 +1,4 @@
-			var yellow = "#ffff00";
+var yellow = "#ffff00";
             var red = "#ff0000";
             var green = "#00ff00";
             var white = "#ffffff";
@@ -140,16 +140,16 @@
 			
             var pecas = [
                 /*Peças azuis*/
-                {i: 9, j: 9, color: "#00BFFF", id: -1, pos: -1},
-                {i: 9, j: 14, color: "#00BFFF", id: -1, pos: -1},
-                {i: 14, j: 9, color: "#00BFFF", id: -1, pos: -1},
-                {i: 14, j: 14, color:"#00BFFF", id: -1, pos: -1},
-                {i: 10, j: 10, color:"#00BFFF", id: -1, pos: -1},
-                {i: 10, j: 13, color: "#00BFFF", id: -1, pos: -1},
-                {i: 13, j: 10, color: "#00BFFF", id: -1, pos: -1},
-                {i: 13, j: 13, color: "#00BFFF", id: -1, pos: -1},
-                {i: 12, j: 11, color: "#00BFFF", id: -1, pos: -1},
-                {i: 11, j: 12, color: "#00BFFF", id: -1, pos: -1},
+                {i: 9, j: 9, color: blue, id: 0, pos: -1},
+                {i: 9, j: 14, color: blue, id: -1, pos: -1},
+                {i: 14, j: 9, color: blue, id: -1, pos: -1},
+                {i: 14, j: 14, color: blue, id: -1, pos: -1},
+                {i: 10, j: 10, color: blue, id: -1, pos: -1},
+                {i: 10, j: 13, color: blue, id: -1, pos: -1},
+                {i: 13, j: 10, color: blue, id: -1, pos: -1},
+                {i: 13, j: 13, color: blue, id: -1, pos: -1},
+                {i: 12, j: 11, color: blue, id: -1, pos: -1},
+                {i: 11, j: 12, color: blue, id: -1, pos: -1},
 
                 /*peças amarelas*/
                 {i: 0, j: 9, color: yellow, id: -1, pos: -1},
@@ -522,7 +522,7 @@
 						}									
 					}
 				}
-				ajaxRequest.open('GET', 'http://gameca.herokuapp.com/centrosaprendizagem/serializardados?idSala=' + idSala, true);
+				ajaxRequest.open('GET', 'http://http://gameca.herokuapp.com/centrosaprendizagem/serializardados?idSala=' + idSala, true);
 				ajaxRequest.send();	 	
 			}	
 			
@@ -572,7 +572,7 @@
                         } else if (pecas[i].color == red) {
                             var ii = caminho_vermelho[pecas[i].pos].i * step + step / 2;
                             var jj = caminho_vermelho[pecas[i].pos].j * step + step / 2;
-                        } else if (pecas[i].color == "#00BFFF") {
+                        } else if (pecas[i].color == blue) {
                             var ii = caminho_azul[pecas[i].pos].i * step + step / 2;
                             var jj = caminho_azul[pecas[i].pos].j * step + step / 2;
                         }
