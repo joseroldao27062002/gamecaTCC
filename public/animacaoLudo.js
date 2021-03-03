@@ -1,4 +1,4 @@
-var yellow = "#ffff00";
+			var yellow = "#ffff00";
             var red = "#ff0000";
             var green = "#00ff00";
             var white = "#ffffff";
@@ -140,16 +140,16 @@ var yellow = "#ffff00";
 			
             var pecas = [
                 /*Peças azuis*/
-                {i: 9, j: 9, color: blue, id: -1, pos: -1},
-                {i: 9, j: 14, color: blue, id: -1, pos: -1},
-                {i: 14, j: 9, color: blue, id: -1, pos: -1},
-                {i: 14, j: 14, color: blue, id: -1, pos: -1},
-                {i: 10, j: 10, color: blue, id: -1, pos: -1},
-                {i: 10, j: 13, color: blue, id: -1, pos: -1},
-                {i: 13, j: 10, color: blue, id: -1, pos: -1},
-                {i: 13, j: 13, color: blue, id: -1, pos: -1},
-                {i: 12, j: 11, color: blue, id: -1, pos: -1},
-                {i: 11, j: 12, color: blue, id: -1, pos: -1},
+                {i: 9, j: 9, color: "#00BFFF", id: 0, pos: -1},
+                {i: 9, j: 14, color: "#00BFFF", id: -1, pos: -1},
+                {i: 14, j: 9, color: "#00BFFF", id: -1, pos: -1},
+                {i: 14, j: 14, color:"#00BFFF", id: -1, pos: -1},
+                {i: 10, j: 10, color:"#00BFFF", id: -1, pos: -1},
+                {i: 10, j: 13, color: "#00BFFF", id: -1, pos: -1},
+                {i: 13, j: 10, color: "#00BFFF", id: -1, pos: -1},
+                {i: 13, j: 13, color: "#00BFFF", id: -1, pos: -1},
+                {i: 12, j: 11, color: "#00BFFF", id: -1, pos: -1},
+                {i: 11, j: 12, color: "#00BFFF", id: -1, pos: -1},
 
                 /*peças amarelas*/
                 {i: 0, j: 9, color: yellow, id: -1, pos: -1},
@@ -498,6 +498,7 @@ var yellow = "#ffff00";
 
 			function executarAjax() {
 				var ajaxRequest = new XMLHttpRequest();
+				var idSala = document.getElementById("idSala").value;
 				ajaxRequest.onreadystatechange = function() {
 					if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
 						var dados = JSON.parse(ajaxRequest.responseText);
@@ -505,22 +506,23 @@ var yellow = "#ffff00";
 						for (var c = 0; c < dados.length; c++) {
 							if (pecas[c].id == -1) {
 								pecas[c].id = c;
-								
+								/*
 								alert(pecas[c].id);
 								alert(dados[c].pontuacaoPorCa);
 								alert(pecas.pos);	
 								alert("olá");
+								*/
 							}
 						}
 						
 						for (var contad = 0; contad < dados.length; contad++) {
 							atualizarPeca(contad, dados[contad].pontuacaoPorCA);
-							alert("achhou");
-							alert(pecas[contad].pos);
+							//alert("achhou");
+							//alert(pecas[contad].pos);
 						}									
 					}
 				}
-				ajaxRequest.open('GET', 'http://localhost:9000/centrosaprendizagem/serializardados?idSala=2', true);
+				ajaxRequest.open('GET', 'http://localhost:9000/centrosaprendizagem/serializardados?idSala=' + idSala, true);
 				ajaxRequest.send();	 	
 			}	
 			
@@ -570,7 +572,7 @@ var yellow = "#ffff00";
                         } else if (pecas[i].color == red) {
                             var ii = caminho_vermelho[pecas[i].pos].i * step + step / 2;
                             var jj = caminho_vermelho[pecas[i].pos].j * step + step / 2;
-                        } else if (pecas[i].color == blue) {
+                        } else if (pecas[i].color == "#00BFFF") {
                             var ii = caminho_azul[pecas[i].pos].i * step + step / 2;
                             var jj = caminho_azul[pecas[i].pos].j * step + step / 2;
                         }
@@ -582,8 +584,8 @@ var yellow = "#ffff00";
             }
 
             function atualizarPeca(id, pontos) {
-            	alert(id);
-            	alert(pontos);
+            	//alert(id);
+            	//alert(pontos);
                 for (var i = 0; i < pecas.length; ++i) {
                     if (pecas[i].id == id) { console.log("ACHOU");
                         pecas[i].pos = pecas[i].pos + pontos;
@@ -593,4 +595,6 @@ var yellow = "#ffff00";
             }
 
             desenharTabuleiro();
-            window.alert(executarAjax());
+            window.onload = (event) => {
+            	executarAjax();
+            }
